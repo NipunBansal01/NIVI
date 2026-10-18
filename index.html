@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthay NIVI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts -->
+    <div class="hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💗</span>
+        <span>💖</span>
+        <span>💘</span>
+        <span>❤️</span>
+        <span>💞</span>
+        <span>💓</span>
+    </div>
+
+
+    <!-- Login Card -->
+    <div class="login-card">
+
+        <div class="heart-icon">
+            ❤
+        </div>
+
+        <h1>Welcome, My Love</h1>
+
+        <p class="subtitle">
+            A little surprise is waiting for you...
+        </p>
+
+        <p class="hint">
+            It will open when you enter us together 💌
+        </p>
+
+
+        <!-- Password Input -->
+        <div class="input-box">
+
+            <span>🔐</span>
+
+            <input
+                type="password"
+                id="secret"
+                placeholder="Enter US Word"
+                autocomplete="off"
+            >
+
+        </div>
+
+
+        <!-- Login Button -->
+        <button onclick="unlock()">
+            Unlock the Wish ❤️
+        </button>
+
+
+        <!-- Error -->
+        <p id="error"></p>
+
+
+        <div class="bottom-heart">
+            Made with ❤️ just for you
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function unlock() {
+
+            const secret =
+                document.getElementById("secret").value;
+
+            const error =
+                document.getElementById("error");
+
+
+            // Correct secret
+            if (secret.toUpperCase() === "NIVI") {
+
+                error.innerHTML = "";
+
+                // Redirect to birthday page
+                window.location.href = "birthday.html";
+
+            } else {
+
+                error.innerHTML =
+                    "Oops! That's not the secret 💔";
+
+            }
+        }
+
+
+        // Allow Enter key
+        document
+            .getElementById("secret")
+            .addEventListener("keypress", function(event) {
+
+                if (event.key === "Enter") {
+                    unlock();
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>
